@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public class JpaRunner {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.
-                createEntityManagerFactory("persistence");
+                createEntityManagerFactory("myDatabaseConfig");
         EntityManager em = emf.createEntityManager();
         EntityTransaction etx = em.getTransaction();
         etx.begin();

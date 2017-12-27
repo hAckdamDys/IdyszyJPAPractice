@@ -14,10 +14,6 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="create" />
-            <mapping class="Product"></mapping>
-            <mapping class="Supplier"></mapping>
-            <mapping class="Category"></mapping>
-            <mapping class="ProductTransaction"></mapping>
         </properties>
     </persistence-unit>
 </persistence>
