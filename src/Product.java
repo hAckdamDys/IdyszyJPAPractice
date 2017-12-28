@@ -12,7 +12,7 @@ public class Product {
     private String productName;
     private Integer unitsOnStock;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Set<ProductTransaction> productTransactions = new HashSet<>();
 
     public Set<ProductTransaction> getProductTransactions(){

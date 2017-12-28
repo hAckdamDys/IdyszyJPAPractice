@@ -25,10 +25,6 @@ public class JpaRunner {
         Product product3 = new Product("Prod3",103);
         Product product4 = new Product("Prod4",104);
 
-        em.persist(product1);
-        em.persist(product2);
-        em.persist(product3);
-        em.persist(product4);
 
         supplier1.addProduct(product1);
         supplier1.addProduct(product4);
@@ -40,14 +36,6 @@ public class JpaRunner {
         category3.addProduct(product3);
         category3.addProduct(product4);
 
-
-        em.persist(supplier1);
-        em.persist(supplier2);
-        em.persist(supplier3);
-
-        em.persist(category1);
-        em.persist(category2);
-        em.persist(category3);
 
         ProductTransaction productTransaction1 = new ProductTransaction(10);
         ProductTransaction productTransaction2 = new ProductTransaction(13);
@@ -70,11 +58,18 @@ public class JpaRunner {
         productTransaction5.addProduct(product3);
         productTransaction5.addProduct(product4);
 
-        em.persist(productTransaction1);
-        em.persist(productTransaction2);
-        em.persist(productTransaction3);
-        em.persist(productTransaction4);
-        em.persist(productTransaction5);
+        em.persist(product1);
+        em.persist(product2);
+        em.persist(product3);
+        em.persist(product4);
+
+        em.persist(supplier1);
+        em.persist(supplier2);
+        em.persist(supplier3);
+
+        em.persist(category1);
+        em.persist(category2);
+        em.persist(category3);
 
         etx.commit();
         em.close();

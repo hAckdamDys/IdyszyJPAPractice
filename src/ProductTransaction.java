@@ -17,8 +17,7 @@ public class ProductTransaction {
                 ",quantity:"+quantity;
     }
 
-    @ManyToMany(mappedBy="productTransactions")
-    //@JoinColumn(name="SUPPLIER_SID")
+    @ManyToMany(mappedBy="productTransactions",cascade = CascadeType.PERSIST)
     private Set<Product> products = new HashSet<>();
 
     public Set<Product> getProducts(){
