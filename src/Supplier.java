@@ -11,12 +11,17 @@ public class Supplier {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int sID;
     String companyName;
-    String street;
-    String city;
+
+    @Embedded
+    @AttributeOverrides(value = {
+            @AttributeOverride(name = "zipCode", column = @Column(length = 10)),
+            @AttributeOverride(name = "city", column = @Column(nullable = false))
+    })
+    private Address address;
 
     @Override
     public String toString(){
-        return "Supplier ID:"+sID+",company:"+companyName+",street"+street+",city"+city;
+        return "Supplier ID:"+sID+",company:"+companyName+",address:{"+address+"}";
     }
 
     @OneToMany(mappedBy="supplier")
@@ -40,6 +45,10 @@ public class Supplier {
 
     public Supplier(String companyName){
         this.companyName = companyName;
+    }
+    public Supplier(String cName,Address address){
+        this.address=address;
+        this.companyName=cName;
     }
     public Supplier() {
     }

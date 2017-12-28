@@ -10,9 +10,12 @@ public class HibRunner {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
 
-        Supplier supplier1 = new Supplier("Company1");
-        Supplier supplier2 = new Supplier("Company2");
-        Supplier supplier3 = new Supplier("Company3");
+        Address address1= new Address("St1","Ct1","Z1");
+        Address address2 = new Address("St2","Ct2","Z2");
+        Address address3 = new Address("St3","Ct2","Z3");
+        Supplier supplier1 = new Supplier("Company1",address1);
+        Supplier supplier2 = new Supplier("Company2",address2);
+        Supplier supplier3 = new Supplier("Company3",address3);
 
         Category category1 = new Category("Cat1");
         Category category2 = new Category("Cat2");

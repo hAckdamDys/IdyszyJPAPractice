@@ -17,12 +17,12 @@ public class QueryRunner {
 //        Wydobądź produkty dostarczane przez wybranego dostawce oraz pokaż dostawcę
 //        wybranego produktu
 
-//        String requiredSupplierCompanyName = "company1";
-//        TypedQuery<Supplier> q = session.createQuery("from Supplier as s"
-//                + " where lower(s.companyName)=:name", Supplier.class);
-//        q.setParameter("name", requiredSupplierCompanyName);
-//        Supplier supplier = q.getSingleResult();
-//        System.out.println(supplier.getProducts());
+        String requiredSupplierCompanyName = "company1";
+        TypedQuery<Supplier> q = session.createQuery("from Supplier as s"
+                + " where lower(s.companyName)=:name", Supplier.class);
+        q.setParameter("name", requiredSupplierCompanyName);
+        Supplier supplier = q.getSingleResult();
+        System.out.println(supplier.getProducts());
 
 
         String requiredProductName = "prod1";
@@ -32,12 +32,12 @@ public class QueryRunner {
         Product product = q2.getSingleResult();
         System.out.println("Prod1 transactions: "+product.getProductTransactions());
 
-        int requiredTransactionNum = 15;
+        int requiredTransactionQuantity = 22;
         TypedQuery<ProductTransaction> q3 = session.createQuery("from ProductTransaction as t"
-                + " where t.TransactionNumber=:tnum", ProductTransaction.class);
-        q3.setParameter("tnum", requiredTransactionNum);
+                + " where t.quantity=:tnum", ProductTransaction.class);
+        q3.setParameter("tnum", requiredTransactionQuantity);
         ProductTransaction productTransaction= q3.getSingleResult();
-        System.out.println("Tnum 15 products: "+productTransaction.getProducts());
+        System.out.println("Tnum 22 products: "+productTransaction.getProducts());
 
 
 //        TypedQuery<Student> q = em.createQuery("from Student as student"
